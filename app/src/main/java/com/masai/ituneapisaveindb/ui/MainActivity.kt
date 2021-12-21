@@ -44,8 +44,8 @@ class MainActivity : AppCompatActivity(),OnClick {
 
       val userApi = Network.getInstance().create(ApiService::class.java)
         repository = DataRepository(userApi,dao)
-        val wishlistFactory = ViewModelFactory(repository)
-        viewModel2 = ViewModelProviders.of(this, wishlistFactory).get(MainViewModel::class.java)
+        val Factory = ViewModelFactory(repository)
+        viewModel2 = ViewModelProviders.of(this, Factory).get(MainViewModel::class.java)
        etEditText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 etEditText.clearFocus()
